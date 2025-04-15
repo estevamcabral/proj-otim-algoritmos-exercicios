@@ -1,0 +1,1 @@
+Todos algoritmos da disciplina Projeto e Otimizaçao de Algoritmos

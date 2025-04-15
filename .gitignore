@@ -1,0 +1,38 @@
+<!-- filepath: /Users/estevam.pacheco/Documents/tevo/proj-otim-algoritmos/.gitignore -->
+# Compiled binaries e bytecode
+bin/
+*.class
+*.bin
+*.lib
+
+# Log files
+*.log
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# Gradle
+.gradle/
+build/
+
+# VS Code
+.vscode/
+
+# IntelliJ Idea
+*.iml
+.idea/
+
+# Eclipse
+.project
+.classpath
+.settings/
