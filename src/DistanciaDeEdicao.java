@@ -16,7 +16,7 @@ public class DistanciaDeEdicao {
 
     public static int delecao(String str1, String str2, int i, int j) {
         iteracoes++;
-        operacoes++;
+        operacoes++; 
         return distanciaDeEdicao(str1, str2, i - 1, j) + 1;
     }
 

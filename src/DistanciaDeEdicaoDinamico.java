@@ -1,4 +1,4 @@
-public class DisgtanciaDeEdicaoDinamico {
+public class DistanciaDeEdicaoDinamico {
 
     public static int distanciaDeEdicaoDinamico(String a, String b) {
         int m = a.length();
@@ -8,7 +8,6 @@ public class DisgtanciaDeEdicaoDinamico {
 
         int iteracoes = 0;
         int operacoes = 0;
-
         for (int i = 0; i <= m; i++) {
             matriz[i][0] = i;
         }
@@ -37,7 +36,7 @@ public class DisgtanciaDeEdicaoDinamico {
         long fim = System.currentTimeMillis();
         long tempoExecucao = fim - inicio;
 
-        System.out.println("Iterações: " + iteracoes);
+        System.out.println("s:Iteraçõe " + iteracoes);
         System.out.println("Operações: " + operacoes);
         System.out.println("Tempo de execução: " + tempoExecucao + " ms");
                 
