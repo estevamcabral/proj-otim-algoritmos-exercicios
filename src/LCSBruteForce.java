@@ -3,42 +3,47 @@ public class LCSBruteForce {
     private String maior = "";
     private int iteracoes = 0;
 
-    public String testandoSubsequencia(String combinacao, String subsequencia) {
+    private String testandoSubsequencia(String combinacao, String subsequencia) {
         int i = 0;
         int j = 0;
-        String maiorSubsequenciaExistente = "";
+        StringBuilder maiorSubsequenciaExistente = new StringBuilder();
 
         while (i < combinacao.length() && j < subsequencia.length()) {
             if (combinacao.charAt(i) == subsequencia.charAt(j)) {
-                maiorSubsequenciaExistente += combinacao.charAt(i);
+                maiorSubsequenciaExistente.append(combinacao.charAt(i));
                 i++;
             }
-
             j++;
         }
 
-        return maiorSubsequenciaExistente;
+        return maiorSubsequenciaExistente.toString();
     }
 
-    public void testandoTodasCombinacoes(int index, String palavra, String combinacao, String subsequencia) {
+    private void testandoTodasCombinacoes(int index, String palavra, String combinacao, String subsequencia) {
         iteracoes++;
         if (index == palavra.length()) {
-           
             String match = testandoSubsequencia(combinacao, subsequencia);
-            if (match.length() > this.maior.length()) {
-                this.maior = match;
+            if (match.length() > maior.length()) {
+                maior = match;
             }
-
             return;
         }
-        
+
         testandoTodasCombinacoes(index + 1, palavra, combinacao, subsequencia);
         testandoTodasCombinacoes(index + 1, palavra, combinacao + palavra.charAt(index), subsequencia);
     }
 
-    public void main(String[] args) {
-        testandoTodasCombinacoes(0, "abcdsdvlkdnfebvloelssdvjkneiuwhpvdjnsdjbgh", "", "sadakjshjebfqoqwiubfv");
-        System.out.println("Maior: " + this.maior);
-        System.out.println("Iterações: " + this.iteracoes);
+    public String encontrarMaiorSubsequencia(String palavra, String subsequencia) {
+        maior = "";
+        iteracoes = 0;
+        testandoTodasCombinacoes(0, palavra, "", subsequencia);
+        System.out.println("Iterações: " + iteracoes);
+        return maior;
+    }
+
+    public static void main(String[] args) {
+        LCSBruteForce lcs = new LCSBruteForce();
+        String resultado = lcs.encontrarMaiorSubsequencia("abcde", "bel");
+        System.out.println("Maior subsequência: " + resultado);
     }
 }
